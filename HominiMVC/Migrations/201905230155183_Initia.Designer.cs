@@ -7,13 +7,13 @@ namespace HominiMVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Intial : IMigrationMetadata
+    public sealed partial class Initia : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Intial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initia));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905230117499_Intial"; }
+            get { return "201905230155183_Initia"; }
         }
         
         string IMigrationMetadata.Source
