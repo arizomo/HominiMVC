@@ -16,6 +16,7 @@ namespace HominiMVC.DAL
         }
 
         public DbSet<Departamento> Departamentos { get; set; }
+        public DbSet<Municipio> Municipios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

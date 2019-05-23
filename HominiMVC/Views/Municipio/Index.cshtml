@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HominiMVC.Models.Municipio>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Municipios</h2>
+<table class="table table-bordered table-hover">
+    <tr></tr>
+</table>
+<p>
+    @Html.ActionLink("Crear nuevo ...", "New")
+</p>
+
+@if (!Model.Any())
+{
+    <p>No se tienen municipios</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Municipio</th>
+                <th>Código</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var municipio in Model)
+            {
+                <tr>
+                    <td>
+                        @municipio.Departamento.NombreDepartamento
+                    </td>
+                    <td>
+                        @municipio.NombreMunicipio
+                    </td>
+                    <td>
+                        @municipio.Departamento.CodigoDepartamento@municipio.CodigoMunicipio
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

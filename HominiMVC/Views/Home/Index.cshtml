@@ -1,31 +1,30 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Página de Inicio";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <h1>Homini POC</h1>
+    <p class="lead">
+        Prueba de concepto
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+        Planteamiento
+
+        En el sistema telefónico de un país los departamentos tienen un indicativo de dos dígitos y los municipios un indicativo de 5 cifras el cual se compone de los dos dígitos del código del departamento al que pertenece el municipio mas otros 3 dígitos únicos por cada municipio (único al departamento al que pertenecen).
+
+        Ejemplo
+
+        Departamentos Nombre Código
+        Antioquia 04 Cundinamarca 01
+
+        Municipios Nombre Código
+        Itagui 04001
+        Envigado 04154
+        Bogota 01001
+        Soacha 01020
+
+        Problema Se requiere un sistema que permita la administración de departamentos y municipios y la asignación de los códigos telefónicos. Además, se requiere una funcionalidad en la cual el usuario entrará un indicativo y el sistema deberá informar el municipio y el departamento al que pertenece el indicativo ej: el usuario ingresa 04154 el sistema deberá informar que el indicativo es del municipio de envigado que queda en el departamento de Antioquia
+
+        Restricciones ▪ La BD debe ser SQL Server ▪ El desarrollo debe ser hecho en .net(vb o c#) ▪ Lo municipios deben pertenecer a un departamento. ▪ Cuando el departamento cambie de indicativo, este cambio se debe ver reflejado en el código del municipio. ▪ Los códigos deben ser numéricos. ▪ Los nombres de los departamentos y municipios solo deben permitir letras.
+
+    </p>
 </div>

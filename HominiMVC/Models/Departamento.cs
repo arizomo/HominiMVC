@@ -10,16 +10,17 @@ namespace HominiMVC.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Nombre es requerido")]
+        [StringLength(50, ErrorMessage = "Máximo 50 caracteres")]
         [Display(Name = "Nombre Departamento")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Solo caracteres del alfabeto")]
         public string NombreDepartamento { get; set; }
 
-        [Required]
-        [StringLength(2)]
-        [MinLength(2)]
+        [Required(ErrorMessage = "Código es requerido")]
+        [StringLength(2, ErrorMessage = "Máximo 2 dígitos")]
+        [MinLength(2, ErrorMessage = "Codigo Departamento debe ser de 2 números")]
         [Display(Name = "Código Departamento")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "CodigoDepartamento debe ser numérico")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Codigo Departamento debe ser numérico")]
         public string CodigoDepartamento { get; set; }
     }
 }

@@ -1,0 +1,29 @@
+﻿
+@model HominiMVC.ViewModel.NewMunicipioViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nuevo municipio</h2>
+
+@using (Html.BeginForm("Create", "Municipio"))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.Municipio.NombreMunicipio)
+    @Html.TextBoxFor(m => m.Municipio.NombreMunicipio, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Municipio.NombreMunicipio, "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Municipio.CodigoMunicipio)
+    @Html.TextBoxFor(m => m.Municipio.CodigoMunicipio, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Municipio.CodigoMunicipio, "", new { @class = "text-danger" })
+
+</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Municipio.DepartamentoId)
+        @Html.DropDownListFor(m => m.Municipio.DepartamentoId, new SelectList(Model.Departamentos, "Id", "NombreDepartamento"), "Departamento: ", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}
+
