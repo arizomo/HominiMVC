@@ -192,6 +192,7 @@
     <Content Include="Views\Departamento\Index.cshtml" />
     <Content Include="Views\Municipio\Index.cshtml" />
     <Content Include="Views\Municipio\New.cshtml" />
+    <Content Include="Views\Municipio\Buscar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

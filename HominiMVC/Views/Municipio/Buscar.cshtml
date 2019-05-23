@@ -1,0 +1,24 @@
+﻿@using (Html.BeginForm("Buscar", "Municipio", FormMethod.Post))
+{
+
+    <div>
+        <h2>Código a buscar:</h2>
+
+        <div class="form-group">
+            @Html.TextBox("nameToFind")
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+
+
+    </div>
+
+}
+
+@{
+    if (ViewBag.SearchKey != null)
+    {
+        <span>
+            Resultado: @ViewBag.SearchKey
+        </span>
+    }
+}

@@ -56,5 +56,43 @@ namespace HominiMVC.Controllers
 
             return RedirectToAction("Index", "Municipio");
         }
+
+        public ActionResult Buscar()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Buscar(string nameToFind)
+        {
+            ViewBag.SearchKey = "No se encontraron registros.";
+
+            if (!(nameToFind == null) && nameToFind.Length>4)
+            {
+                string departamentoCodigo = nameToFind.Substring(0, 2);
+                string municipioCodigo = nameToFind.Substring(nameToFind.Length - 3, 3);
+
+                var departamento = (from d in _context.Departamentos
+                                    where d.CodigoDepartamento == departamentoCodigo
+                                    select d).DefaultIfEmpty().Single();
+
+                if(!(departamento == null))
+                {
+                    var municipio = (from m in _context.Municipios
+                                     where m.CodigoMunicipio == municipioCodigo
+                                     where m.DepartamentoId == departamento.Id
+                                     select m).DefaultIfEmpty().Single();
+
+                    if (!(municipio == null))
+                    {
+                        ViewBag.SearchKey = "El código corresponde al departamento " + departamento.NombreDepartamento + " y al municipio " + municipio.NombreMunicipio;
+                    }
+                }
+                
+            }
+
+            return View();
+        }
     }
 }
